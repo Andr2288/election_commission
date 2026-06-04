@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 
 const navItems = [
   { to: '/', label: 'Головна', end: true },
+  { to: '/members', label: 'Члени комісії' },
 ];
 
 export default function Layout() {

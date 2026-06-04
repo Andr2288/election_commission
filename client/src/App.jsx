@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import CommissionMembers from './pages/CommissionMembers';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -69,6 +70,7 @@ export default function App() {
         }
       >
         <Route index element={<Dashboard />} />
+        <Route path="members" element={<CommissionMembers />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

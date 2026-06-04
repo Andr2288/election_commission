@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const roleLabels = {
@@ -25,17 +26,24 @@ export default function Dashboard() {
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { title: 'Члени комісії', desc: 'Етап 2' },
-          { title: 'Засідання', desc: 'Етап 3' },
-          { title: 'Доручення', desc: 'Етап 4' },
-          { title: 'Звіти', desc: 'Етап 5' },
+          { title: 'Члени комісії', desc: 'Готово', to: '/members', ready: true },
+          { title: 'Засідання', desc: 'Етап 3', ready: false },
+          { title: 'Доручення', desc: 'Етап 4', ready: false },
+          { title: 'Звіти', desc: 'Етап 5', ready: false },
         ].map((item) => (
           <div
             key={item.title}
-            className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 opacity-60"
+            className={`rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 ${
+              item.ready ? '' : 'opacity-60'
+            }`}
           >
             <h4 className="font-medium text-slate-800">{item.title}</h4>
-            <p className="mt-1 text-sm text-slate-500">{item.desc} — скоро</p>
+            <p className="mt-1 text-sm text-slate-500">{item.desc}</p>
+            {item.to && (
+              <Link to={item.to} className="mt-2 inline-block text-sm font-medium text-primary-600 hover:underline">
+                Перейти →
+              </Link>
+            )}
           </div>
         ))}
       </div>
