@@ -5,6 +5,9 @@ const cors = require('cors');
 const pool = require('./db');
 const authRoutes = require('./routes/auth');
 const commissionMembersRoutes = require('./routes/commissionMembers');
+const meetingsRoutes = require('./routes/meetings');
+const protocolsRoutes = require('./routes/protocols');
+const documentsRoutes = require('./routes/documents');
 
 const PORT = process.env.PORT || 5000;
 
@@ -24,6 +27,9 @@ app.get('/api/health', async (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/commission-members', commissionMembersRoutes);
+app.use('/api/meetings', meetingsRoutes);
+app.use('/api/protocols', protocolsRoutes);
+app.use('/api/documents', documentsRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Маршрут не знайдено' });

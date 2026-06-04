@@ -5,6 +5,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import CommissionMembers from './pages/CommissionMembers';
+import Meetings from './pages/Meetings';
+import MeetingDetail from './pages/MeetingDetail';
+import Protocols from './pages/Protocols';
+import Documents from './pages/Documents';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -71,6 +75,10 @@ export default function App() {
       >
         <Route index element={<Dashboard />} />
         <Route path="members" element={<CommissionMembers />} />
+        <Route path="meetings" element={<Meetings />} />
+        <Route path="meetings/:id" element={<MeetingDetail />} />
+        <Route path="protocols" element={<Protocols />} />
+        <Route path="documents" element={<Documents />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

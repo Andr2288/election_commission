@@ -24,12 +24,14 @@ export default function Dashboard() {
         </p>
       </div>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { title: 'Члени комісії', desc: 'Готово', to: '/members', ready: true },
-          { title: 'Засідання', desc: 'Етап 3', ready: false },
-          { title: 'Доручення', desc: 'Етап 4', ready: false },
-          { title: 'Звіти', desc: 'Етап 5', ready: false },
+          { title: 'Члени комісії', to: '/members', ready: true },
+          { title: 'Засідання', to: '/meetings', ready: true },
+          { title: 'Протоколи', to: '/protocols', ready: true },
+          { title: 'Постанови / Рішення', to: '/documents', ready: true },
+          { title: 'Доручення', to: null, ready: false },
+          { title: 'Звіти', to: null, ready: false },
         ].map((item) => (
           <div
             key={item.title}
@@ -38,7 +40,7 @@ export default function Dashboard() {
             }`}
           >
             <h4 className="font-medium text-slate-800">{item.title}</h4>
-            <p className="mt-1 text-sm text-slate-500">{item.desc}</p>
+            <p className="mt-1 text-sm text-slate-500">{item.ready ? 'Готово' : 'Скоро'}</p>
             {item.to && (
               <Link to={item.to} className="mt-2 inline-block text-sm font-medium text-primary-600 hover:underline">
                 Перейти →
