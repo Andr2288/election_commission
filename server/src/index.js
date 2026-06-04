@@ -8,6 +8,7 @@ const commissionMembersRoutes = require('./routes/commissionMembers');
 const meetingsRoutes = require('./routes/meetings');
 const protocolsRoutes = require('./routes/protocols');
 const documentsRoutes = require('./routes/documents');
+const assignmentsRoutes = require('./routes/assignments');
 
 const PORT = process.env.PORT || 5000;
 
@@ -30,6 +31,7 @@ app.use('/api/commission-members', commissionMembersRoutes);
 app.use('/api/meetings', meetingsRoutes);
 app.use('/api/protocols', protocolsRoutes);
 app.use('/api/documents', documentsRoutes);
+app.use('/api/assignments', assignmentsRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Маршрут не знайдено' });

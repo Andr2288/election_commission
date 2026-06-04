@@ -30,7 +30,7 @@ export default function Dashboard() {
           { title: 'Засідання', to: '/meetings', ready: true },
           { title: 'Протоколи', to: '/protocols', ready: true },
           { title: 'Постанови / Рішення', to: '/documents', ready: true },
-          { title: 'Доручення', to: null, ready: false },
+          { title: 'Доручення', to: '/assignments', ready: true },
           { title: 'Звіти', to: null, ready: false },
         ].map((item) => (
           <div

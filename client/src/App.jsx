@@ -9,6 +9,7 @@ import Meetings from './pages/Meetings';
 import MeetingDetail from './pages/MeetingDetail';
 import Protocols from './pages/Protocols';
 import Documents from './pages/Documents';
+import Assignments from './pages/Assignments';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -79,6 +80,7 @@ export default function App() {
         <Route path="meetings/:id" element={<MeetingDetail />} />
         <Route path="protocols" element={<Protocols />} />
         <Route path="documents" element={<Documents />} />
+        <Route path="assignments" element={<Assignments />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

@@ -7,6 +7,7 @@ const navItems = [
   { to: '/meetings', label: 'Засідання' },
   { to: '/protocols', label: 'Протоколи' },
   { to: '/documents', label: 'Постанови / Рішення' },
+  { to: '/assignments', label: 'Доручення' },
 ];
 
 export default function Layout() {

@@ -34,3 +34,15 @@ export const documentTypeLabels = {
   resolution: 'Постанова',
   decision: 'Рішення',
 };
+
+export const assignmentStatusLabels = {
+  in_progress: 'Виконується',
+  completed: 'Виконано',
+  overdue: 'Прострочено',
+};
+
+export const assignmentStatusColors = {
+  in_progress: 'bg-blue-100 text-blue-700',
+  completed: 'bg-green-100 text-green-700',
+  overdue: 'bg-red-100 text-red-700',
+};
